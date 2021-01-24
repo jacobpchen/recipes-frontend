@@ -1,37 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import './App.css';
+import React from "react";
+
+import { Switch, Route } from "react-router-dom";
+
+import Nav from "./components/Nav"
+import Recipes from './containers/Recipes'
+import Recipe from './containers/Recipe'
+import Category from './category/category'
 
 function App() {
-
-  const [recipes, setRecipes] = useState([])
-
-  useEffect(() => {
-    const getRecipes = async () => {
-      await axios.get('http://localhost:1337/recipes')
-        .then(response => {
-          setRecipes(response.data)
-        })
-    }
-    getRecipes()
-  }, [])
-
-  return (
-    <div>
-      <h1>Hello!</h1>
-      {console.log(recipes)}
-
-      <div>
-        {recipes.map(data =>
-          <div key={data.id}>
-            <p>{data.title}</p>
-            <p>{data.ingredients}</p>
-            <p>{data.instructions}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  )
+    return (
+        <div className="App">
+            <Nav />
+            <Switch>
+                <Route path="/" component={Recipes} exact />
+                <Route path="/recipes/:id" component={Recipe} exact />
+                <Route path="/categories/:id" component={Category} exact />
+            </Switch>
+        </div>
+    );
 }
 
 export default App;
