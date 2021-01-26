@@ -13,7 +13,7 @@ const Recipe = () => {
     return (
         <Query query={RECIPE_QUERY} id={id}>
             {({ data: { recipe } }) => {
-                const imageUrl = 'https://placekitten.com/301/301'
+                const imageUrl = recipe.link
                 return (
                     <div>
                         <div

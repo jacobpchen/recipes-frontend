@@ -9,6 +9,7 @@ const RECIPES_QUERY = gql`
         id
         name
       }
+      link
       instructions
     ingredients
     }

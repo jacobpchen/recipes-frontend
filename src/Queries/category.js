@@ -9,8 +9,8 @@ query Category($id:ID!){
       title
       ingredients
       instructions
+      link
     }
-    created_at
   }
 }
 `;

@@ -7,11 +7,13 @@ query Recipes($id:ID!){
     title
     instructions
     ingredients
+    link
   }
   categories {
       id
       name
   }
+
 }
 `;
 
