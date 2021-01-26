@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Query from "./Query";
 import { Link } from "react-router-dom";
+import { UserContext } from '../context/UserContext'
 
 import CATEGORIES_QUERY from "../Queries/categories";
 
 const Nav = () => {
+
+    const { user, setUser } = useContext(UserContext)
+    console.log("NAV", user)
+
     return (
         <div>
             <Query query={CATEGORIES_QUERY} id={null}>
@@ -17,14 +22,40 @@ const Nav = () => {
                                         <li>
                                             <Link to="/">Recipes</Link>
                                         </li>
+                                        {user &&
+                                            <li>
+                                                <Link to="/post">Post</Link>
+                                            </li>
+                                        }
+                                        {user &&
+                                            <li>
+                                                <Link to={`/userinfo/${user.user.id}`}>{user.user.username}</Link>
+                                            </li>
+                                        }
+                                        {user &&
+                                            <li>
+                                                <Link to="/login" onClick={(event) => {
+                                                    setUser(null)
+                                                }} >Logout</Link>
+
+                                            </li>
+                                        }
+                                        {!user &&
+                                            <li>
+                                                <Link to="/login">Login</Link>
+                                            </li>
+                                        }
+                                        {!user &&
+                                            <li>
+                                                <Link to="/signup">Signup</Link>
+                                            </li>
+                                        }
                                     </ul>
                                 </div>
 
                                 <div className="uk-navbar-right">
                                     {console.log(categories)}
-
                                     <ul className="uk-navbar-nav">
-
                                         {categories.map((category, i) => {
                                             return (
                                                 <li key={category.id}>
