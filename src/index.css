@@ -5,7 +5,7 @@ a {
   h1 {
     font-family: Staatliches;
     font-size: 120px;
-  }
+  } 
   
   #category {
     font-family: Staatliches;
@@ -31,11 +31,25 @@ a {
   }
   
   .uk-navbar-container {
-    background: #fff !important;
     font-family: Staatliches;
   }
+
+.login{
+  height: 100vh
+} 
   
   img:hover {
     opacity: 1;
     transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
+
+  .textbox {
+    height:30px;
+    font-size:12pt;
+}
+
+.recipe-card{
+  -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+}

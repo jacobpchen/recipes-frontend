@@ -2,10 +2,9 @@ import React from "react";
 import Card from './Card'
 
 const Recipe = ({ recipes }) => {
-    const leftRecipeCount = Math.ceil(recipes.length / 5);
+    const leftRecipeCount = Math.ceil(recipes.length / 4);
     const leftRecipe = recipes.slice(0, leftRecipeCount);
     const rightRecipe = recipes.slice(leftRecipeCount, recipes.length);
-    console.log(recipes)
 
     return (
         <div>
