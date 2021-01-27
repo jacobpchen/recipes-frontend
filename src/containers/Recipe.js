@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import Query from '../components/Query'
 import ReactMarkdown from "react-markdown";
 import Moment from 'react-moment'
-
+import styled from 'styled-components'
 import RECIPE_QUERY from "../Queries/recipe";
 
 const Recipe = () => {
@@ -27,9 +27,9 @@ const Recipe = () => {
 
                         <div className="uk-section">
                             <div className="uk-container uk-container-small recipe-card">
-                                <h3 className="uk-margin-top">Ingredients</h3>
+                                <Pheading className="uk-margin-top">Ingredients</Pheading>
                                 <ReactMarkdown source={recipe.ingredients} />
-                                <h3>Instructions</h3>
+                                <Pheading>Instructions</Pheading>
                                 <ReactMarkdown source={recipe.instructions} />
                                 <p className="uk-margin-bottom">
                                     Posted on: <Moment format="MMM Do YYYY">{recipe.created_at}</Moment>
@@ -42,5 +42,10 @@ const Recipe = () => {
         </Query>
     );
 };
+
+const Pheading = styled.p`
+font-family: Staatliches;
+    font-size: 50px;
+`
 
 export default Recipe;

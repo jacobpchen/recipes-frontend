@@ -27,12 +27,6 @@ function App() {
         }
     }, [config.darkMode, dispatch])
 
-    const themeChange = (value) => {
-        console.log("INSIDE THEMECHANGE")
-        console.log(value)
-        window.localStorage.setItem('theme', value)
-        dispatch(darkModeAction(value))
-    }
     return (
         <ThemeProvider theme={config.darkMode === "light" ? lightTheme : darkTheme}>
             <Container>
@@ -46,10 +40,6 @@ function App() {
                         <Route path="/userinfo/:id" component={UserInfo} exact />
                         <Route path="/categories/:id" component={Category} exact />
                     </Switch>
-                </div>
-                <div className="mode">
-                    <button onClick={() => themeChange('dark')}>Dark Mode</button>
-                    <button onClick={() => themeChange('light')}>Light Mode</button>
                 </div>
             </Container>
         </ThemeProvider>
