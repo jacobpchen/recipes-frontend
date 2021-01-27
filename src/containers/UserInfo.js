@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import Moment from 'react-moment'
 
@@ -9,7 +9,7 @@ export default function UserInfo() {
     console.log(user)
 
     return (
-        <div>
+        <div className="uk-container">
             <h2> Profile </h2>
             <div> <label >Username: </label> {user.user.username} </div>
             <div> <label >Email: </label> {user.user.email} </div>

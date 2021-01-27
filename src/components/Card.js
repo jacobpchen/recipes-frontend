@@ -13,7 +13,6 @@ const Card = ({ recipe }) => {
 
     return (
         <Link to={`/recipes/${recipe.id}`} className="uk-link-reset">
-
             <div className="uk-card uk-card-muted">
                 <div className="uk-card-media-top">
                     <img

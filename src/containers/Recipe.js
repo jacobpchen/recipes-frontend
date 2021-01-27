@@ -26,14 +26,13 @@ const Recipe = () => {
                         </div>
 
                         <div className="uk-section">
-                            <div className="uk-container uk-container-small">
-                                <h3>Ingredients</h3>
+                            <div className="uk-container uk-container-small recipe-card">
+                                <h3 className="uk-margin-top">Ingredients</h3>
                                 <ReactMarkdown source={recipe.ingredients} />
                                 <h3>Instructions</h3>
                                 <ReactMarkdown source={recipe.instructions} />
-                                <p>
-                                    Posted on:
-                                    <Moment format="MMM Do YYYY">{recipe.created_at}</Moment>
+                                <p className="uk-margin-bottom">
+                                    Posted on: <Moment format="MMM Do YYYY">{recipe.created_at}</Moment>
                                 </p>
                             </div>
                         </div>
