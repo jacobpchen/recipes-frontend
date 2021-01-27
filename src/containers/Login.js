@@ -71,29 +71,11 @@ export default function Login({ history }) {
                                     setPassword(event.target.value)
                                 }} />
                         </div>
-
-
                     </div>
                     <button class="uk-button uk-align-center">Login</button>
                 </fieldset>
             </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             {error && <p>{error}</p>}
-
         </div>
     )
 }
