@@ -8,6 +8,7 @@ query Recipes($id:ID!){
     instructions
     ingredients
     link
+    views
   }
   categories {
       id

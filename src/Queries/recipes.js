@@ -12,6 +12,7 @@ const RECIPES_QUERY = gql`
       link
       instructions
     ingredients
+    views
     }
   }
 `;

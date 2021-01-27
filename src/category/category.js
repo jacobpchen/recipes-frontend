@@ -13,11 +13,8 @@ const Category = () => {
                 return (
                     <div>
                         <div className="uk-section">
-                            {console.log("Inside category.js")}
                             <div className="uk-container uk-container-large">
                                 <h1>{category.name}</h1>
-                                {console.log(category.name)}
-                                {console.log(category.recipes)}
                                 <Recipes recipes={category.recipes} />
                             </div>
                         </div>

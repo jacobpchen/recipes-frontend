@@ -11,7 +11,6 @@ const Home = () => {
                     <h1>Recipes</h1>
                     <Query query={RECIPES_QUERY}>
                         {({ data: { recipes } }) => {
-                            { console.log("Inside RECIPES") }
                             return <Recipe recipes={recipes} />;
                         }}
                     </Query>

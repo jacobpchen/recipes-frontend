@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({ recipe }) => {
-    console.log(recipe)
 
-    const imageClick = () => {
-        console.log(recipe.title)
-        console.log('Image clicked!')
-    }
+
+    /*     const imageClick = () => {
+            console.log(recipe.title)
+            console.log('Image clicked!')
+            console.log(recipe.views)
+    
+        } */
 
     return (
         <Link to={`/recipes/${recipe.id}`} className="uk-link-reset">
@@ -17,13 +19,14 @@ const Card = ({ recipe }) => {
                     <img
                         src={recipe.link}
                         height="100"
-                        onClick={imageClick}
+
                     />
                 </div>
                 <div className="uk-card-body">
                     <p id="category" className="uk-text-uppercase uk-text-large">
                         {recipe.title}
                     </p>
+                    {recipe.views}
                 </div>
             </div>
         </Link>

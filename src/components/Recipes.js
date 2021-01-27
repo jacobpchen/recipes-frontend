@@ -5,7 +5,6 @@ const Recipe = ({ recipes }) => {
     const leftRecipeCount = Math.ceil(recipes.length / 5);
     const leftRecipe = recipes.slice(0, leftRecipeCount);
     const rightRecipe = recipes.slice(leftRecipeCount, recipes.length);
-    console.log(recipes)
 
     return (
         <div>

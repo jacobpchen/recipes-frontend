@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserContext'
-
+import index from '../index.css'
 export default function Login({ history }) {
 
     const [username, setUsername] = useState('')
@@ -44,25 +44,53 @@ export default function Login({ history }) {
     }
 
     return (
-        <div className="login">
-            <h2>Login</h2>
+        <div className="login uk-flex uk-flex-column uk-container">
+            <form class="uk-form" onSubmit={handleSubmit}>
+                <fieldset data-uk-margin>
+                    <legend className="uk-text-lead">Login</legend>
+                    <div className="uk-form-row uk-flex uk-flex-center ">
+                        <div>
+                            <p className="uk-margin-large-right uk-flex-center uk-text-large">
+                                <label>Username</label></p>
+                            <input
+                                type="text"
+                                value={username}
+                                className="uk-form-width-large textbox"
+                                onChange={(event) => {
+                                    setError('')
+                                    setUsername(event.target.value)
+                                }} />
+                            <p className="uk-margin-large-right uk-text-large">
+                                <label>Password</label> </p>
+                            <input
+                                className="uk-form-width-large textbox"
+                                type="password"
+                                value={password}
+                                onChange={(event) => {
+                                    setError('')
+                                    setPassword(event.target.value)
+                                }} />
+                        </div>
 
-            <form onSubmit={handleSubmit}>
-                <label >Username: </label>
-                <input type="text" value={username} onChange={(event) => {
-                    setError('')
-                    setUsername(event.target.value)
-                }} />
-                <br></br>
-                <label >Password: </label>
-                <input type="password" value={password} onChange={(event) => {
-                    setError('')
-                    setPassword(event.target.value)
-                }} />
-                <br></br>
-                <button>Login</button>
 
+                    </div>
+                    <button class="uk-button uk-align-center">Login</button>
+                </fieldset>
             </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             {error && <p>{error}</p>}
 

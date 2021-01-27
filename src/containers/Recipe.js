@@ -9,7 +9,6 @@ import RECIPE_QUERY from "../Queries/recipe";
 const Recipe = () => {
     console.log("Inside recipes")
     let { id } = useParams();
-    console.log(id)
     return (
         <Query query={RECIPE_QUERY} id={id}>
             {({ data: { recipe } }) => {
