@@ -10,6 +10,7 @@ const Recipe = () => {
     console.log("Inside recipes")
     let { id } = useParams();
     return (
+
         <Query query={RECIPE_QUERY} id={id}>
             {({ data: { recipe } }) => {
                 const imageUrl = recipe.link

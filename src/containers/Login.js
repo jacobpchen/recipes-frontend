@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserContext'
+import styled from 'styled-components'
 export default function Login({ history }) {
 
     const [username, setUsername] = useState('')
@@ -46,7 +47,7 @@ export default function Login({ history }) {
         <div className="login uk-flex uk-flex-column uk-container">
             <form class="uk-form" onSubmit={handleSubmit}>
                 <fieldset data-uk-margin>
-                    <legend className="uk-text-lead">Login</legend>
+                    <Legend>Login</Legend>
                     <div className="uk-form-row uk-flex uk-flex-center ">
                         <div>
                             <p className="uk-margin-large-right uk-flex-center uk-text-large">
@@ -78,3 +79,10 @@ export default function Login({ history }) {
         </div>
     )
 }
+
+const Legend = styled.legend`
+    font-family: Staatliches;
+    font-size: 30px;
+
+`
+
