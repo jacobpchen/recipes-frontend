@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from '../context/UserContext'
+import React, { useState } from "react";
 import "./Post.css";
 import Query from "../components/Query";
 import CATEGORIES_QUERY from "../Queries/categories";
@@ -23,11 +22,10 @@ const Post = () => {
         const response = await fetch("http://localhost:1337/recipes", {
             method: 'POST',
             body: formData
-            
+
         })
         const data = await response.json()
         console.log("data", data)
-
     }
 
     return (
@@ -43,7 +41,7 @@ const Post = () => {
                 <br></br>
 
                 <input type="file" onChange={(event) => setFile(event.target.files[0])} />
-                
+
                 <br></br>
                 <label>Category: </label>
                 <Query query={CATEGORIES_QUERY} id={null} >
@@ -60,7 +58,7 @@ const Post = () => {
                                                 console.log(arr)
                                                 if (event.target.checked) {
                                                     for (let i = 0; i < categories.length; i++) {
-                                                        if (event.target.value == categories[i].id) {
+                                                        if (event.target.value === categories[i].id) {
                                                             arr.push(categories[i])
                                                         }
                                                     }
@@ -98,7 +96,7 @@ const Post = () => {
                 }} />
 
                 <br></br>
-                <button onClick= {handleSubmit}>Share</button>
+                <button onClick={handleSubmit}>Share</button>
             </form>
 
         </div>

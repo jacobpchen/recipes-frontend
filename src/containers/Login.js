@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserContext'
-import index from '../index.css'
 export default function Login({ history }) {
 
     const [username, setUsername] = useState('')

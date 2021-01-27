@@ -1,7 +1,9 @@
 import React from "react";
 import { useParams } from "react-router";
+import styled from 'styled-components'
 import Recipes from "../components/Recipes";
 import Query from "../components/Query";
+
 import CATEGORY_RECIPES_QUERY from '../Queries/category'
 
 const Category = () => {
@@ -14,7 +16,7 @@ const Category = () => {
                     <div>
                         <div className="uk-section">
                             <div className="uk-container uk-container-large">
-                                <h1>{category.name}</h1>
+                                <Pheading>{category.name}</Pheading>
                                 <Recipes recipes={category.recipes} />
                             </div>
                         </div>
@@ -24,5 +26,10 @@ const Category = () => {
         </Query>
     );
 };
+
+const Pheading = styled.p`
+font-family: Staatliches;
+    font-size: 120px;
+`
 
 export default Category;

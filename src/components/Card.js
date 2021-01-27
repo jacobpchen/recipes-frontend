@@ -10,7 +10,7 @@ const Card = ({ recipe }) => {
                     <img
                         src={recipe.link}
                         height="100"
-
+                        alt="pictures of recipes"
                     />
                 </div>
                 <div className="uk-card-body">

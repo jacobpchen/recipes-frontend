@@ -39,6 +39,7 @@ const Nav = () => {
                                     <nav className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
                                         <div className="uk-navbar-left">
                                             <ul className="uk-navbar-nav">
+
                                                 <li>
                                                     <Link to="/">Recipes</Link>
                                                 </li>
@@ -70,7 +71,6 @@ const Nav = () => {
                                                         <Link to="/signup">Signup</Link>
                                                     </li>
                                                 }
-
                                             </ul>
                                         </div>
 
@@ -87,13 +87,12 @@ const Nav = () => {
                                                         </li>
                                                     );
                                                 })}
+                                                <li><a href=" " onClick={() => themeChange('dark')}>Dark Mode</a></li>
+                                                <li><a href=" " onClick={() => themeChange('light')}>Light Mode</a></li>
                                             </ul>
                                         </div>
                                     </nav>
-                                    <ul class="uk-subnav uk-margin" >
-                                        <li><a onClick={() => themeChange('dark')}>Dark Mode</a></li>
-                                        <li><a onClick={() => themeChange('light')}>Light Mode</a></li>
-                                    </ul>
+
                                 </div>
                             );
                         }}
