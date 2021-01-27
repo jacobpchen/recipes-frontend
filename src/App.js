@@ -35,21 +35,23 @@ function App() {
     }
     return (
         <ThemeProvider theme={config.darkMode === "light" ? lightTheme : darkTheme}>
-            <div className="App">
-                <Nav />
-                <Switch>
-                    <Route path="/" component={Recipes} exact />
-                    <Route path="/recipes/:id" component={Recipe} exact />
-                    <Route path="/login" component={Login} exact />
-                    <Route path="/signup" component={Signup} exact />
-                    <Route path="/userinfo/:id" component={UserInfo} exact />
-                    <Route path="/categories/:id" component={Category} exact />
-                </Switch>
-            </div>
-            <div className="mode">
-                <button onClick={() => themeChange('dark')}>Dark Mode</button>
-                <button onClick={() => themeChange('light')}>Light Mode</button>
-            </div>
+            <Container>
+                <div className="App">
+                    <Nav />
+                    <Switch>
+                        <Route path="/" component={Recipes} exact />
+                        <Route path="/recipes/:id" component={Recipe} exact />
+                        <Route path="/login" component={Login} exact />
+                        <Route path="/signup" component={Signup} exact />
+                        <Route path="/userinfo/:id" component={UserInfo} exact />
+                        <Route path="/categories/:id" component={Category} exact />
+                    </Switch>
+                </div>
+                <div className="mode">
+                    <button onClick={() => themeChange('dark')}>Dark Mode</button>
+                    <button onClick={() => themeChange('light')}>Light Mode</button>
+                </div>
+            </Container>
         </ThemeProvider>
     );
 }
