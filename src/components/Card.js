@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 
 const Card = ({ recipe }) => {
 
-
-    /*     const imageClick = () => {
-            console.log(recipe.title)
-            console.log('Image clicked!')
-            console.log(recipe.views)
-    
-        } */
-
     return (
         <Link to={`/recipes/${recipe.id}`} className="uk-link-reset">
             <div className="uk-card uk-card-muted">

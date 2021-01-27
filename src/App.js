@@ -14,6 +14,7 @@ import Category from './category/category'
 import lightTheme from './theme/light';
 import darkTheme from './theme/dark';
 import Container from "./theme/component/Container"
+import Post from './containers/PostRecipe'
 import { darkModeAction } from './actions/config_action';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                         <Route path="/" component={Recipes} exact />
                         <Route path="/recipes/:id" component={Recipe} exact />
                         <Route path="/login" component={Login} exact />
+                        <Route path="/post" component={Post} exact />
                         <Route path="/signup" component={Signup} exact />
                         <Route path="/userinfo/:id" component={UserInfo} exact />
                         <Route path="/categories/:id" component={Category} exact />
