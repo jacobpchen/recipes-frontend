@@ -3,14 +3,14 @@ import { useParams } from "react-router";
 import Query from '../components/Query'
 import ReactMarkdown from "react-markdown";
 import Moment from 'react-moment'
-
+import styled from 'styled-components'
 import RECIPE_QUERY from "../Queries/recipe";
 
 const Recipe = () => {
     console.log("Inside recipes")
     let { id } = useParams();
-    console.log(id)
     return (
+
         <Query query={RECIPE_QUERY} id={id}>
             {({ data: { recipe } }) => {
                 const imageUrl = recipe.link
@@ -27,14 +27,13 @@ const Recipe = () => {
                         </div>
 
                         <div className="uk-section">
-                            <div className="uk-container uk-container-small">
-                                <h3>Ingredients</h3>
+                            <div className="uk-container uk-container-small recipe-card">
+                                <Pheading className="uk-margin-top">Ingredients</Pheading>
                                 <ReactMarkdown source={recipe.ingredients} />
-                                <h3>Instructions</h3>
+                                <Pheading>Instructions</Pheading>
                                 <ReactMarkdown source={recipe.instructions} />
-                                <p>
-                                    Posted on:
-                                    <Moment format="MMM Do YYYY">{recipe.created_at}</Moment>
+                                <p className="uk-margin-bottom">
+                                    Posted on: <Moment format="MMM Do YYYY">{recipe.created_at}</Moment>
                                 </p>
                             </div>
                         </div>
@@ -44,5 +43,10 @@ const Recipe = () => {
         </Query>
     );
 };
+
+const Pheading = styled.p`
+font-family: Staatliches;
+    font-size: 50px;
+`
 
 export default Recipe;
