@@ -17,7 +17,7 @@ const Post = () => {
     console.log("file", file)
     console.log("arr", arr)
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        alert("Successfully submitted recipe!")
         const formData = new FormData()
         formData.append('data', JSON.stringify({ title, ingredients, instructions, categories: arr }))
         formData.append('files.image', file)
@@ -33,28 +33,36 @@ const Post = () => {
     return (
         <div className="post uk-container uk-align-center">
             <Pheading>Post a new recipe</Pheading>
-            <br></br>
-
-            <form>
-                <div className="post-subheaders">Title:</div>
-                <input value={title} onChange={(event) => {
-                    setTitle(event.target.value)
-                }} />
-                <br></br>
-                <input type="file" onChange={(event) => setFile(event.target.files[0])} />
-                <br></br>
-                <label>Category: </label>
+            <form className="ukform">
+                <div>
+                    <p className="uk-margin-large-right uk-flex-center uk-text-large">
+                        <Label>Title</Label></p>
+                    <input
+                        value={title}
+                        className="uk-form-width-large textbox"
+                        onChange={(event) => {
+                            setTitle(event.target.value)
+                        }} />
+                </div>
+                <div>
+                    <input type="file"
+                        onChange={(event) => setFile(event.target.files[0])}
+                        className="uk-margin-top"
+                    />
+                </div>
+                <Label>Category</Label>
                 <Query query={CATEGORIES_QUERY} id={null} >
                     {({ data: { categories } }) => {
                         return (
                             categories.map((category, i) => {
-
                                 return (
                                     <div>
-                                        <input type="checkbox" id="categories" value={category.id}
+                                        <input
+                                            type="checkbox"
+                                            id="categories"
+                                            value={category.id}
+                                            className="uk-checkbox uk-margin-small-right"
                                             onChange={(event) => {
-                                                console.log(event.target.value)
-                                                console.log(arr)
                                                 if (event.target.checked) {
                                                     for (let i = 0; i < categories.length; i++) {
                                                         if (event.target.value === categories[i].id) {
@@ -77,28 +85,27 @@ const Post = () => {
                         )
                     }}
                 </Query>
-                <br></br>
-                <div className="post-subheaders">Instructions:</div>
-                <textarea className="recipe-textbox" value={instructions} onChange={(event) => {
-                    setInstructions(event.target.value)
-                }} />
-                <div className="post-subheaders">Ingredients:</div>
-                <textarea className="recipe-textbox" value={ingredients} onChange={(event) => {
-                    setIngredients(event.target.value)
-                }} />
-
-                <br></br>
-                <button onClick={handleSubmit}>Share</button>
+                <Label>Ingredients:</Label>
+                <textarea
+                    className="uk-textarea recipe-textbox"
+                    value={ingredients}
+                    onChange={(event) => {
+                        setIngredients(event.target.value)
+                    }} />
+                <div>
+                    <Label>Instructions:</Label>
+                    <textarea
+                        className="uk-textarea recipe-textbox"
+                        rows="5"
+                        value={instructions}
+                        onChange={(event) => {
+                            setInstructions(event.target.value)
+                        }} />
+                </div>
+                <button
+                    className="submit-button uk-button-large uk-margin-bottom"
+                    onClick={handleSubmit}>Share</button>
             </form>
-
-            <form className="ukform"></form>
-
-
-
-
-
-
-
 
         </div>
     );
@@ -107,6 +114,11 @@ const Post = () => {
 const Pheading = styled.p`
 font-family: Staatliches;
     font-size: 50px;
+`
+
+const Label = styled.p`
+font-family: Staatliches;
+    font-size: 20px;
 `
 
 export default Post;
