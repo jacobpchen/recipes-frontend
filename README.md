@@ -1,3 +1,9 @@
+![screenshot of homepage](https://github.com/jacobpchen/recipes-frontend/blob/main/screenshots/homepage.png)
+![screenshot of recipe](https://github.com/jacobpchen/recipes-frontend/blob/main/screenshots/recipe.png)
+![screenshot of darkmode](https://github.com/jacobpchen/recipes-frontend/blob/main/screenshots/homepage-darkmode.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
