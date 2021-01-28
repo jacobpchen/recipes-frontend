@@ -54,7 +54,7 @@ export default function Signup({ history }) {
     return (
         <div className="signup">
             <div className="login uk-flex uk-flex-column uk-container">
-                <form class="uk-form" onSubmit={handleSubmit}>
+                <form className="uk-form" onSubmit={handleSubmit}>
                     <fieldset data-uk-margin>
                         <Legend >Sign Up</Legend>
                         <div className="uk-form-row uk-flex uk-flex-center">

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styled from 'styled-components'
+
 import "./Post.css";
 import Query from "../components/Query";
 import CATEGORIES_QUERY from "../Queries/categories";
@@ -29,23 +31,20 @@ const Post = () => {
     }
 
     return (
-        <div className="Post">
-            <div>Post a new recipe</div>
+        <div className="post uk-container uk-align-center">
+            <Pheading>Post a new recipe</Pheading>
             <br></br>
 
-            <form  >
+            <form>
                 <div className="post-subheaders">Title:</div>
                 <input value={title} onChange={(event) => {
                     setTitle(event.target.value)
                 }} />
                 <br></br>
-
                 <input type="file" onChange={(event) => setFile(event.target.files[0])} />
-
                 <br></br>
                 <label>Category: </label>
                 <Query query={CATEGORIES_QUERY} id={null} >
-
                     {({ data: { categories } }) => {
                         return (
                             categories.map((category, i) => {
@@ -74,22 +73,15 @@ const Post = () => {
                                         <label htmlFor="categories" >{category.name} </label>
                                     </div>
                                 )
-
                             })
-
                         )
-
                     }}
                 </Query>
                 <br></br>
-
-
                 <div className="post-subheaders">Instructions:</div>
                 <textarea className="recipe-textbox" value={instructions} onChange={(event) => {
                     setInstructions(event.target.value)
                 }} />
-
-
                 <div className="post-subheaders">Ingredients:</div>
                 <textarea className="recipe-textbox" value={ingredients} onChange={(event) => {
                     setIngredients(event.target.value)
@@ -99,8 +91,22 @@ const Post = () => {
                 <button onClick={handleSubmit}>Share</button>
             </form>
 
+            <form className="ukform"></form>
+
+
+
+
+
+
+
+
         </div>
     );
 };
+
+const Pheading = styled.p`
+font-family: Staatliches;
+    font-size: 50px;
+`
 
 export default Post;

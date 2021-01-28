@@ -34,8 +34,11 @@ a {
     font-family: Staatliches;
   }
 
-.login{
+.login {
   height: 100vh
+}
+.post{
+  height:100vh
 } 
   
   img:hover {
